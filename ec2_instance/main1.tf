@@ -39,16 +39,16 @@ terraform {
   }
 }
 provider "aws" {
-    region = "ap-northeast-1"
-    access_key = " "
-    secret_key = " "
+    region = "eu-west-2"
+    access_key = "AKIAUQCQ7SFDQWWKAWUD"
+    secret_key = "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"
 }
 resource "aws_instance" "linux_server" {
-    ami = "ami-0cc8b0ca07fee465f"
+    ami = "ami-0cd8ad123effa531a"
     instance_type = "t2.micro"
     # count = "5"
   
 }
 output "public_ip" {
-    value = "aws_instance.linux_server.public_ip "
+    value = aws_instance.linux_server.public_ip
 } 
